@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigHub", "GigHub\GigHub.csproj", "{12272977-4805-47C6-932F-61C37F27220E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12272977-4805-47C6-932F-61C37F27220E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12272977-4805-47C6-932F-61C37F27220E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12272977-4805-47C6-932F-61C37F27220E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12272977-4805-47C6-932F-61C37F27220E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF1903CB-F321-4CED-B726-EA84A1D4D742}
+	EndGlobalSection
+EndGlobal
