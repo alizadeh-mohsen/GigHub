@@ -12,10 +12,14 @@ namespace GigHub.Models
         [Required, StringLength(100)]
         public string Venue { get; set; }
 
-        [Required]
         public IdentityUser Artist { get; set; }
 
         [Required]
+        public string ArtistId { get; set; }
+        
+        [Required]
+        public int GenreId { get; set; }
+
         public Genre Genre { get; set; }
     }
 }
