@@ -35,13 +35,19 @@ namespace GigHub.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(GigsViewModel newGig)
         {
+            if (!ModelState.IsValid)
+            {
+                newGig.Genres = await _context.Genres.ToListAsync();
+                return View("Create", newGig);
+            }
+
             var user = await _userManager.GetUserAsync(HttpContext.User);
 
             var gig = new Gig
             {
                 ArtistId = user.Id,
                 GenreId = newGig.GenreId,
-                Date = newGig.DateTime,
+                Date = newGig.GetDateTime(),
                 Venue = newGig.Venue
             };
 
