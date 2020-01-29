@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Threading.Tasks;
 
 namespace GigHub.Controllers
@@ -31,8 +30,7 @@ namespace GigHub.Controllers
             return View(model);
         }
 
-        [Authorize]
-        [HttpPost]
+        [HttpPost, Authorize, ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(GigsViewModel newGig)
         {
             if (!ModelState.IsValid)
@@ -51,7 +49,6 @@ namespace GigHub.Controllers
                 Venue = newGig.Venue
             };
 
-
             _context.Gigs.Add(gig);
 
             var result = await _context.SaveChangesAsync();
@@ -60,7 +57,6 @@ namespace GigHub.Controllers
                 newGig.Id = gig.Id;
                 return RedirectToAction("index", "Home");
             }
-
             return BadRequest();
         }
     }

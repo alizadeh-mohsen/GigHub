@@ -2,28 +2,30 @@
 
 @using (@Html.BeginForm("Create", "Gigs"))
 {
+    <p class="alert alert-info">Al fields are <strong>required</strong>.</p>
+    @Html.AntiForgeryToken()
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
                 @Html.LabelFor(g => g.Venue)
-                @Html.TextBoxFor(g => g.Venue, new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.Venue,"",new {@class="text-danger"},"")
+                @Html.TextBoxFor(g => g.Venue, new { @class = "form-control" ,autofocus="autofocus"})
+                @Html.ValidationMessageFor(g => g.Venue, "", new { @class = "text-danger" }, "")
             </div>
             <div class="form-group">
                 @Html.LabelFor(g => g.Date)
-                @Html.TextBoxFor(g => g.Date, new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.Date,"",new {@class="text-danger"},"")
+                @Html.TextBoxFor(g => g.Date, new { @class = "form-control" ,placeholder="eg 2020/02/02"})
+                @Html.ValidationMessageFor(g => g.Date, "", new { @class = "text-danger" }, "")
             </div>
             <div class="form-group">
                 @Html.LabelFor(g => g.Time)
-                @Html.TextBoxFor(g => g.Time, new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.Time,"",new {@class="text-danger"},"")
+                @Html.TextBoxFor(g => g.Time, new { @class = "form-control" ,placeholder="eg 20:30"})
+                @Html.ValidationMessageFor(g => g.Time, "", new { @class = "text-danger" }, "")
 
             </div>
             <div class="form-group">
                 @Html.LabelFor(g => g.GenreId)
                 @Html.DropDownListFor(g => g.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.GenreId,"",new {@class="text-danger"},"")
+                @Html.ValidationMessageFor(g => g.GenreId, "", new { @class = "text-danger" }, "")
 
             </div>
             <div>
