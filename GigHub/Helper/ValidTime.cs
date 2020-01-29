@@ -8,9 +8,10 @@ namespace GigHub.Helper
     {
         public override bool IsValid(object value)
         {
-            DateTime d;
-            var result = DateTime.TryParseExact(value.ToString(), "HH:mm", CultureInfo.CurrentCulture, DateTimeStyles.None, out d);
-
+            if (value is null) 
+                return false;
+            
+            var result = DateTime.TryParseExact(value.ToString(), "HH:mm", CultureInfo.CurrentCulture, DateTimeStyles.None, out _);
             return result;
         }
     }
