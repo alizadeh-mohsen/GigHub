@@ -7,23 +7,23 @@
             <div class="form-group">
                 @Html.LabelFor(g => g.Venue)
                 @Html.TextBoxFor(g => g.Venue, new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.Venue)
+                @Html.ValidationMessageFor(g => g.Venue,"",new {@class="text-danger"},"")
             </div>
             <div class="form-group">
                 @Html.LabelFor(g => g.Date)
                 @Html.TextBoxFor(g => g.Date, new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.Date)
+                @Html.ValidationMessageFor(g => g.Date,"",new {@class="text-danger"},"")
             </div>
             <div class="form-group">
                 @Html.LabelFor(g => g.Time)
                 @Html.TextBoxFor(g => g.Time, new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.Time)
+                @Html.ValidationMessageFor(g => g.Time,"",new {@class="text-danger"},"")
 
             </div>
             <div class="form-group">
                 @Html.LabelFor(g => g.GenreId)
                 @Html.DropDownListFor(g => g.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control" })
-                @Html.ValidationMessageFor(g => g.GenreId)
+                @Html.ValidationMessageFor(g => g.GenreId,"",new {@class="text-danger"},"")
 
             </div>
             <div>
@@ -32,7 +32,7 @@
         </div>
     </div>
 }
-@section Scripts
+@*@section Scripts
 {
     <partial name="_ValidationScriptsPartial" />
-}
+}*@
