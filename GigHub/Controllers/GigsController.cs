@@ -41,7 +41,7 @@ namespace GigHub.Controllers
             {
                 ArtistId = user.Id,
                 GenreId = newGig.GenreId,
-                Date = DateTime.Parse(string.Format("{0} {1}", newGig.Date, newGig.Time)),
+                Date = newGig.DateTime,
                 Venue = newGig.Venue
             };
 
@@ -56,10 +56,6 @@ namespace GigHub.Controllers
             }
 
             return BadRequest();
-        }
-        public IActionResult Save(string @class)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
