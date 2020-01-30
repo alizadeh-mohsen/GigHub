@@ -18,7 +18,7 @@ namespace GigHub.Controllers
         }
         public async Task<ActionResult<IEnumerable<Gig>>> Index()
         {
-            var gigs = await _context.Gigs.Include(g => g.Artist).ToListAsync();
+            var gigs = await _context.Gigs.Include(g => g.Artist).Include(g => g.Genre).ToListAsync();
             return View(gigs);
         }
 
